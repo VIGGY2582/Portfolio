@@ -1,74 +1,64 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { DiJava, DiJavascript1, DiNodejs, DiGit, DiDocker } from "react-icons/di";
-import { SiSpringboot, SiPostgresql, SiHtml5, SiCss3, SiBootstrap, SiMongodb, SiGolang, SiJwt, SiGit, SiPostman } from "react-icons/si";
-import { FaReact, FaJava } from "react-icons/fa";
-
-// Skill categories based on user-provided list
-const categories = [
-  {
-    title: "Languages",
-    items: [
-      { icon: <FaJava />, label: "Java" },
-      { icon: <DiJavascript1 />, label: "JavaScript" },
-      { icon: <SiGolang />, label: "Golang" },
-      { icon: <DiDocker />, label: "C" }, // using Docker icon as placeholder for C
-      { icon: <SiMongodb />, label: "SQL" }, // MongoDB icon used as generic database icon for SQL
-    ],
-  },
-  {
-    title: "Frontend",
-    items: [
-      { icon: <FaReact />, label: "React.js" },
-      { icon: <SiHtml5 />, label: "HTML5" },
-      { icon: <SiCss3 />, label: "CSS3" },
-      { icon: <SiBootstrap />, label: "Bootstrap" },
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
-      { icon: <SiSpringboot />, label: "Spring Boot" },
-      { icon: <DiNodejs />, label: "Node.js" },
-      { icon: <DiDocker />, label: "Golang" },
-      { icon: <SiJwt />, label: "REST APIs" },
-      { icon: <SiJwt />, label: "JWT Authentication" },
-    ],
-  },
-  {
-    title: "Database",
-    items: [
-      { icon: <SiPostgresql />, label: "PostgreSQL" },
-    ],
-  },
-  {
-    title: "Tools",
-    items: [
-      { icon: <DiGit />, label: "Git" },
-      { icon: <SiGit />, label: "GitHub" },
-      { icon: <DiDocker />, label: "Docker" },
-      { icon: <SiPostman />, label: "Postman" },
-    ],
-  },
-];
+import { Row, Col } from "react-bootstrap";
+import { DiJava, DiJavascript1, DiGit, DiDocker } from "react-icons/di";
+import { SiReact, SiHtml5, SiCss3, SiBootstrap, SiSpring, SiNodedotjs, SiGo, SiPostgresql, SiPostman } from "react-icons/si";
 
 const Techstack = () => {
   return (
-    <div className="techstack-section" style={{ paddingBottom: "50px" }}>
-      {categories.map((cat, idx) => (
-        <div key={idx} style={{ marginBottom: "30px" }}>
-          <h4 className="tech-category-title">{cat.title}</h4>
-          <Row className="justify-content-center">
-            {cat.items.map((skill, i) => (
-              <Col xs={4} md={2} className="tech-icons" key={i} style={{ textAlign: "center", marginBottom: "15px" }}>
-                {skill.icon}
-                <p style={{ fontSize: "0.75rem", marginTop: "5px" }}>{skill.label}</p>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      ))}
-    </div>
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiJava />
+        <span className="skill-name">Java</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiJavascript1 />
+        <span className="skill-name">JavaScript</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiHtml5 />
+        <span className="skill-name">HTML5</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiCss3 />
+        <span className="skill-name">CSS3</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiBootstrap />
+        <span className="skill-name">Bootstrap</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiReact />
+        <span className="skill-name">React</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiNodedotjs />
+        <span className="skill-name">Node.js</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiPostgresql />
+        <span className="skill-name">PostgreSQL</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiSpring />
+        <span className="skill-name">Spring Boot</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiDocker />
+        <span className="skill-name">Docker</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiGo />
+        <span className="skill-name">Golang</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <DiGit />
+        <span className="skill-name">Git</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiPostman />
+        <span className="skill-name">Postman</span>
+      </Col>
+    </Row>
   );
 };
 
