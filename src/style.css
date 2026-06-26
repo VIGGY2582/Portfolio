@@ -481,21 +481,24 @@ html {
     transition: all 0.4s ease 0s !important;
   }
   
-/* Skill Box Cards */
+/* Skill Box Cards Grid */
 .skills-grid {
   display: grid;
   gap: 20px;
   justify-content: center;
   justify-items: center;
   padding: 20px;
-  margin-top: 100px;
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  width: 100%;
 }
-
 
 @media (min-width: 992px) {
   .skills-grid {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .skills-grid > :nth-child(11) {
+    grid-column-start: 2;
   }
 }
 
@@ -503,63 +506,156 @@ html {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .skills-grid > :nth-child(13) {
+    grid-column: span 3;
+    justify-self: center;
+  }
 }
 
 @media (max-width: 767px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .skills-grid > :nth-child(13) {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+/* Tools and Profiles Grid Wrappers */
+.tools-grid,
+.profiles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* Universal Card styles */
+.skill-box,
+.tool-box,
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  background: var(--section-background-color);
+  border: 1.7px solid rgb(89, 0, 190);
+  border-radius: 8px;
+  box-shadow: 2px 3px 4px rgba(117, 0, 250, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-decoration: none !important;
 }
 
 .skill-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
   height: 140px;
-  margin: 0;
+  padding: 12px;
+}
+
+.tool-box,
+.profile-card {
+  height: 105px;
   padding: 8px;
-  border: 1.7px solid rgb(89, 0, 190);
-  border-radius: 8px;
-  background: var(--section-background-color);
-  box-shadow: 2px 3px 4px rgba(117, 0, 250, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Increase icon size inside skill boxes */
-.skill-box svg {
-  font-size: 2.5rem;
+.skill-box.empty {
+  visibility: hidden;
+  display: none;
 }
 
-/* Tool box styling (slightly reduced height) */
-.tool-box {
+/* Icon centering and sizing */
+.skill-box svg,
+.tool-box svg,
+.profile-card svg {
+  font-size: 2.6rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Text naming styling */
+.skill-name,
+.tool-name,
+.profile-card h4 {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.profile-card h4 {
+  margin-bottom: 0;
+}
+
+/* Smooth hover animations */
+.skill-box:hover,
+.tool-box:hover,
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(117, 0, 250, 0.6);
+  border-color: rgba(117, 0, 250, 0.8);
+}
+
+.skill-box:hover svg,
+.tool-box:hover svg,
+.profile-card:hover svg {
+  color: #be6adf;
+}
+
+/* Heatmap & stats section custom container styles */
+.stats-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 105px; /* ~25% reduction from 140 */
-  margin: 12px;
-  padding: 8px;
-  border: 1.7px solid rgb(89, 0, 190);
-  border-radius: 8px;
-  background: var(--section-background-color);
-  box-shadow: 2px 3px 4px rgba(117, 0, 250, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
-.tool-box svg {
-  font-size: 2rem;
+.leetcode-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--section-background-color);
+  border: 1.7px solid rgb(89, 0, 190);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 2px 3px 15px rgba(117, 0, 250, 0.2);
+  max-width: 100%;
+  overflow: hidden;
 }
-.skill-box:hover {
-  transform: scale(1.04);
-  box-shadow: 3px 4px 6px rgba(117, 0, 250, 0.5);
+
+.leetcode-card img {
+  max-width: 100%;
+  height: auto;
 }
-.skill-name {
-  margin-top: 6px;
-  font-size: 0.9rem;
+
+.github-calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--section-background-color);
+  border: 1.7px solid rgb(89, 0, 190);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 2px 3px 15px rgba(117, 0, 250, 0.2);
+  max-width: 100%;
   color: #fff;
+}
+
+/* Section formatting with 80-100px padding */
+.skill-section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {

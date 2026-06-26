@@ -1,18 +1,19 @@
 import React from "react";
-import ReactMarkdown from 'react-markdown'
-import { Row } from "react-bootstrap";
+import ReactMarkdown from 'react-markdown';
 
 const Leetcode = () => {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+    <div className="stats-container">
       <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
-        <strong className="yellow">LeetCode</strong> Stat
+        <strong className="yellow">LeetCode</strong> Stats
       </h1>
-      <ReactMarkdown>
-      ![LeetCode Stats](https://leetcard.jacoblin.cool/VIGNESHWARACHAKRAVARTHY?theme=dark&font=Syne%20Mono&ext=heatmap)
-      </ReactMarkdown>
-    </Row>
+      <div className="leetcode-card">
+        <ReactMarkdown>
+          {`![LeetCode Stats](https://leetcard.jacoblin.cool/VIGNESHWARACHAKRAVARTHY?theme=dark&font=Syne%20Mono&ext=heatmap)`}
+        </ReactMarkdown>
+      </div>
+    </div>
   );
-}
+};
 
 export default Leetcode;

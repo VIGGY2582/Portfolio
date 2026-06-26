@@ -1,20 +1,27 @@
 import React from "react";
-import {
-  SiVisualstudiocode,
-  SiPostman,
-  SiHeroku,
-  SiVercel,
-  SiNetlify,
-} from "react-icons/si";
+import { AiFillGithub } from "react-icons/ai";
+import { SiVisualstudiocode, SiPostman, SiIntellijidea, SiCanva, SiPostgresql } from "react-icons/si";
+import { DiDocker } from "react-icons/di";
+
+const tools = [
+  { icon: <SiVisualstudiocode />, name: "VS Code" },
+  { icon: <AiFillGithub />, name: "GitHub" },
+  { icon: <SiIntellijidea />, name: "IntelliJ IDEA" },
+  { icon: <DiDocker />, name: "Docker" },
+  { icon: <SiPostman />, name: "Postman" },
+  { icon: <SiPostgresql />, name: "pgAdmin" },
+  { icon: <SiCanva />, name: "Canva" },
+];
 
 const Toolstack = () => {
   return (
-    <div className="skills-grid">
-      <div className="tool-box"><SiVisualstudiocode /></div>
-      <div className="tool-box"><SiPostman /></div>
-      <div className="tool-box"><SiVercel /></div>
-      <div className="tool-box"><SiNetlify /></div>
-      <div className="tool-box"><SiHeroku /></div>
+    <div className="tools-grid">
+      {tools.map((tool, idx) => (
+        <div key={idx} className="tool-box">
+          {tool.icon}
+          <span className="tool-name">{tool.name}</span>
+        </div>
+      ))}
     </div>
   );
 };
