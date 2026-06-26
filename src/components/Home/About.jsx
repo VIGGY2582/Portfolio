@@ -21,8 +21,8 @@ const About = () => {
                   LET ME <span className="yellow"> INTRODUCE </span> MYSELF
                 </h1>
                 <p className="home-about-body">
-                 Hi, my name is <span className="yellow">Md Abu Bakkar Siddiqe Sajib </span>
-                 and I'm from <span className="yellow"> Dhaka, Bangladesh.</span>
+                  Hi, my name is <span className="yellow">Vigneshwara Chakravarthy</span>
+                  and I'm a B.Tech Computer Science and Business Systems graduate from Dr. N.G.P. Institute of Technology, Coimbatore, Tamil Nadu, India.
                 <br />
                 <br />
                 I recently graduated with a Bachelor's degree in Computer Science and Engineering in 2021.
