@@ -467,7 +467,7 @@ html {
   }
   
   .tech-icons {
-    font-size: 4.5em !important;
+    font-size: 3em !important;
     margin: 15px !important;
     padding: 10px !important;
     opacity: 0.93 !important;
@@ -481,7 +481,88 @@ html {
     transition: all 0.4s ease 0s !important;
   }
   
-  @media (max-width: 767px) {
+/* Skill Box Cards */
+.skills-grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  justify-items: center;
+  padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+
+@media (min-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  padding: 8px;
+  border: 1.7px solid rgb(89, 0, 190);
+  border-radius: 8px;
+  background: var(--section-background-color);
+  box-shadow: 2px 3px 4px rgba(117, 0, 250, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Increase icon size inside skill boxes */
+.skill-box svg {
+  font-size: 2.5rem;
+}
+
+/* Tool box styling (slightly reduced height) */
+.tool-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 105px; /* ~25% reduction from 140 */
+  margin: 12px;
+  padding: 8px;
+  border: 1.7px solid rgb(89, 0, 190);
+  border-radius: 8px;
+  background: var(--section-background-color);
+  box-shadow: 2px 3px 4px rgba(117, 0, 250, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-box svg {
+  font-size: 2rem;
+}
+.skill-box:hover {
+  transform: scale(1.04);
+  box-shadow: 3px 4px 6px rgba(117, 0, 250, 0.5);
+}
+.skill-name {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
     .tech-icons {
       margin: 10px !important;
     }
